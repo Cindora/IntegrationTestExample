@@ -5,12 +5,15 @@ public class Array_pt1 {
     public static void main(String[] args) {
         double[] Xn = EnterArray();
 
-        System.out.println("Количество элементов массива, меньших среднего: " +
-                NumberOfElementsLessThanAverage(Xn));
+        int lessThanAvg = NumberOfElementsLessThanAverage(Xn);
+        System.out.println("Количество элементов массива, меньших среднего: " + lessThanAvg);
 
         // Значения и номера элементов, делящихся на 3
+
+        double [][] pairs = findElementsDivisibleByThree(Xn);
+
         System.out.println("Элементы, делящиеся на 3 без остатка:");
-        for (double[] pair : findElementsDivisibleByThree(Xn)) {
+        for (double[] pair : pairs) {
             System.out.println("Значение: " + pair[0] + ", Позиция: " + ((int)pair[1]+1));
         }
         //
